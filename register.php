@@ -4,15 +4,25 @@ $mail = "";
 $meldung = "";
 if (isset($_POST["submit"])){
 	$mail = $_POST["mail"];
-	if (in_array("@",$mail) == false){
-		//Falsches Format
-		$meldung = "Bitte eine gültige Mail Adresse angeben";
+	if($mail != ""){
+		if (strpos($mail,"@") == false or strpos($mail,".") == false){
+			//Falsches Format
+			$meldung = "Bitte eine gültige Mail Adresse angeben";
+		}
+	}else{
+		$meldung = "Keine E-Mail Adresse eingegeben";
 	}
 	if ($meldung == ""){
 		$p1 = $_POST["password1"];
 		$p2 = $_POST["password2"];
-		if ($p1 != $p2){
-			$meldung == "Die Kennwörter stimmen nicht überein";
+		if($p1 != ""){
+			if ($p1 != $p2){
+				$meldung = "Die Kennwörter stimmen nicht überein";
+			}else{
+				//Alles okay
+			}
+		}else{
+			$meldung = "Kein Kennwort eingegeben";
 		}
 	}
 }
@@ -40,6 +50,9 @@ if (isset($_POST["submit"])){
 </tr>
 </table>
 </form>
+
+
+<p align="center"><font color="red"><?=$meldung; ?></font></p>
 
 </body>
 </html>
