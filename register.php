@@ -4,10 +4,10 @@ $mail = "";
 $meldung = "";
 if isset($_POST["submit"]){
 	$mail = $_POST["mail"];
-	if (in_array("@",$mail) == false){
+	//if (in_array("@",$mail) == false){
 		//Falsches Format
-		$meldung = "Bitte eine gültige Mail Adresse angeben";
-	}
+	//	$meldung = "Bitte eine gültige Mail Adresse angeben";
+	//}
 	if ($meldung == ""){
 		$p1 = $_POST["password1"];
 		$p2 = $_POST["password2"];
