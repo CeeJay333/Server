@@ -20,6 +20,9 @@ if (isset($_POST["submit"])){
 				$meldung = "Die Kennwörter stimmen nicht überein";
 			}else{
 				//Alles okay
+				exec('python random.py',$user_id);
+				$meldung = "Nutzer hat die ID: " . $user_id;
+				//UserID und Kennwort in der Datenbank zwischenspeichern, Aktivierungsmail senden und auf Aktivierung warten
 			}
 		}else{
 			$meldung = "Kein Kennwort eingegeben";
