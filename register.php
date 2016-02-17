@@ -21,8 +21,11 @@ if (isset($_POST["submit"])){
 			}else{
 				//Alles okay
 				exec('python random.py',$user_id);
-				$meldung = "Nutzer hat die ID: " . $user_id;
+				$meldung = "Nutzer hat die ID: " . var_dump($user_id);
 				//UserID und Kennwort in der Datenbank zwischenspeichern, Aktivierungsmail senden und auf Aktivierung warten
+				$url = "http://ceejay333.ddns.net/index/confirm.php?id=" . var_dump($user_id);
+				$nachricht = "Hallo,\n\ndu hast Zugang zu meinem Server beantragt.\n\nUm deinen Account freizuschalten klicke bitte folgenden Link an: " . $url . "\n\nViele Grüße\nCarsten";
+				
 			}
 		}else{
 			$meldung = "Kein Kennwort eingegeben";
