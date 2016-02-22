@@ -4,7 +4,7 @@ $meldung = "";
 if(isset($_POST["submit"])){
 	$mail = $_POST["mail"];
 	$pw = $_POST["pw"];
-	
+
 	if($mail == ""){
 		$meldung = "Keine eMail Adresse eingegeben";
 	}else{
@@ -12,7 +12,7 @@ if(isset($_POST["submit"])){
 			$meldung = "Kein Passwort eingegeben";
 		}else{
 			//Mail und Kennwort sind gesetzt. Auf Validität prüfen
-			
+
 		}
 	}
 }
