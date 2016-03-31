@@ -1,6 +1,7 @@
 <html>
 <?php
 $meldung = "";
+$mail = "";
 if(isset($_POST["submit"])){
 	$mail = $_POST["mail"];
 	$pw = $_POST["pw"];
